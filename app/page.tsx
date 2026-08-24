@@ -4,6 +4,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Image from "next/image";
 
+import { projects, techStack } from "./data";
+
 export default function Home() {
   return (
     <div>
@@ -78,42 +80,51 @@ export default function Home() {
         <h2 className="text-3xl font-semibold">
           Tech Stack & Tools
         </h2>
-      
+
         <p className="pt-3 text-lg">
           Technologies and tools I use to build projects and explore how
           software works.
         </p>
-      
+
         <div className="grid grid-cols-3 gap-12 pt-10">
           <div>
-            <h3 className="text-lg font-bold">Languages</h3>
+            <h3 className="text-lg font-bold">
+              Languages
+            </h3>
+
             <p className="pt-3 leading-7">
-              JavaScript, TypeScript, Python, C++
+              {techStack.languages.join(", ")}
             </p>
           </div>
-      
+
           <div>
-            <h3 className="text-lg font-bold">Development</h3>
+            <h3 className="text-lg font-bold">
+              Development
+            </h3>
+
             <p className="pt-3 leading-7">
-              React, Next.js, Node.js, Express, MongoDB, Redis
+              {techStack.development.join(", ")}
             </p>
           </div>
-      
+
           <div>
-            <h3 className="text-lg font-bold">Linux & Systems</h3>
+            <h3 className="text-lg font-bold">
+              Linux & Systems
+            </h3>
+
             <p className="pt-3 leading-7">
-              Arch Linux, Hyprland, Bash, Git, Docker
+              {techStack.linux.join(", ")}
             </p>
           </div>
         </div>
-      
+
         <div className="pt-10">
           <h3 className="text-lg font-bold">
             Currently Learning
           </h3>
-      
+
           <p className="pt-3 leading-7">
-            Currently learning Rust and exploring how software works closer to the hardware.
+            {techStack.learning.join(", ")}
           </p>
         </div>
       </section>
@@ -130,90 +141,52 @@ export default function Home() {
           Some projects and applications I have built.
         </p>
 
-        <div className="pt-10">
-          <div className="flex items-center justify-between">
-            <a
-              href="https://crafters-stats.site/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-lg font-semibold hover:underline"
-            >
-              Crafters Stats
-              <OpenInNewIcon sx={{ fontSize: 16 }} />
-            </a>
+        <div className="pt-10 space-y-8">
+          {projects.map((project) => (
+            <div key={project.name}>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <span className="text-lg font-semibold">
+                    {project.name}
+                  </span>
 
-            <span className="text-sm">
-              Next.js / Node.js
-            </span>
-          </div>
+                  <div className="flex items-center gap-3">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-sm hover:underline"
+                      >
+                        Live
+                        <OpenInNewIcon sx={{ fontSize: 14 }} />
+                      </a>
+                    )}
 
-          <p className="pt-2">
-            A Minecraft statistics website built with Next.js,
-            Express, Redis and MongoDB.
-          </p>
-        </div>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-sm hover:underline"
+                      >
+                        GitHub
+                        <GitHubIcon sx={{ fontSize: 14 }} />
+                      </a>
+                    )}
+                  </div>
+                </div>
 
-        <div className="pt-8">
-          <div className="flex items-center justify-between">
-            <a
-              href="#"
-              className="flex items-center gap-2 text-lg font-semibold hover:underline"
-            >
-              PyQsHere
-              <OpenInNewIcon sx={{ fontSize: 16 }} />
-            </a>
+                <span className="text-sm">
+                  {project.stack}
+                </span>
+              </div>
 
-            <span className="text-sm">
-              Next.js
-            </span>
-          </div>
-
-          <p className="pt-2">
-            A platform for finding and organizing previous year
-            question papers for students.
-          </p>
-        </div>
-
-        <div className="pt-8">
-          <div className="flex items-center justify-between">
-            <a
-              href="#"
-              className="flex items-center gap-2 text-lg font-semibold hover:underline"
-            >
-              Discord Bots
-              <OpenInNewIcon sx={{ fontSize: 16 }} />
-            </a>
-
-            <span className="text-sm">
-              Node.js
-            </span>
-          </div>
-
-          <p className="pt-2">
-            Discord bots built with JavaScript and Node.js for
-            automation and server utilities.
-          </p>
-        </div>
-
-        <div className="pt-8">
-          <div className="flex items-center justify-between">
-            <a
-              href="#"
-              className="flex items-center gap-2 text-lg font-semibold hover:underline"
-            >
-              Minecraft Projects
-              <OpenInNewIcon sx={{ fontSize: 16 }} />
-            </a>
-
-            <span className="text-sm">
-              JavaScript / TypeScript
-            </span>
-          </div>
-
-          <p className="pt-2">
-            Various Minecraft-related projects, tools and server
-            development experiments.
-          </p>
+              <p className="pt-2">
+                {project.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

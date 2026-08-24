@@ -54,7 +54,7 @@ export const projects = [
     description:
       "Personal portfolio website.",
     stack: "Next.js",
-    live: "",
-    github: "",
+    live: "https://sahil.is-a.dev/",
+    github: "https://github.com/SahilShidruk/Portfolio-Website",
   },
 ];

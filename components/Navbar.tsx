@@ -3,23 +3,26 @@ import { Contact, File, ToolCase } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between">
-      <Link href="/" className="text-xl font-semibold">
+    <nav className="flex items-center justify-center py-5 md:justify-between">
+      <Link
+        href="/"
+        className="text-base font-medium opacity-80 transition-opacity hover:opacity-100 md:text-xl md:font-semibold"
+      >
         Sahil Shidruk
       </Link>
 
-      <div className="flex items-center gap-6">
+      <div className="hidden items-center gap-6 md:flex">
         <Link
           href="#tools"
-          className="flex items-center gap-2 hover:underline"
+          className="flex items-center gap-2 text-base font-medium opacity-80 transition-opacity hover:opacity-100"
         >
           <ToolCase size={18} />
           Tools
         </Link>
-        
+
         <Link
           href="#projects"
-          className="flex items-center gap-2 hover:underline"
+          className="flex items-center gap-2 text-base font-medium opacity-80 transition-opacity hover:opacity-100"
         >
           <File size={18} />
           Projects
@@ -27,7 +30,7 @@ export default function Navbar() {
 
         <Link
           href="#contact"
-          className="flex items-center gap-2 hover:underline"
+          className="flex items-center gap-2 text-base font-medium opacity-80 transition-opacity hover:opacity-100"
         >
           <Contact size={18} />
           Contact

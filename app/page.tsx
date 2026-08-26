@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <section
         id="home"
-        className="flex min-h-[55vh] flex-col items-center justify-center"
+        className="flex min-h-[55vh] flex-col items-center justify-center px-4 text-center"
       >
         <div className="mb-6 h-24 w-24 overflow-hidden rounded-full">
           <Image
@@ -24,15 +24,15 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="text-5xl font-bold">
+        <h1 className="text-4xl font-bold sm:text-5xl">
           Sahil Shidruk
         </h1>
 
-        <p className="pt-3 text-2xl">
+        <p className="px-2 pt-3 text-xl sm:text-2xl">
           I am Sahil Shidruk from Maharashtra, India.
         </p>
 
-        <div className="flex gap-5 pt-5">
+        <div className="flex flex-wrap justify-center gap-5 pt-5">
           <a
             href="https://github.com/SahilShidruk"
             target="_blank"
@@ -75,7 +75,7 @@ export default function Home() {
 
       <section
         id="tools"
-        className="mx-auto flex max-w-3xl flex-col py-20"
+        className="mx-auto flex max-w-3xl flex-col px-5 py-20 sm:px-6"
       >
         <h2 className="text-3xl font-semibold">
           Tech Stack & Tools
@@ -86,7 +86,7 @@ export default function Home() {
           software works.
         </p>
 
-        <div className="grid grid-cols-3 gap-12 pt-10">
+        <div className="grid grid-cols-1 gap-8 pt-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-12">
           <div>
             <h3 className="text-lg font-bold">
               Languages
@@ -131,7 +131,7 @@ export default function Home() {
 
       <section
         id="projects"
-        className="mx-auto flex max-w-3xl flex-col py-20"
+        className="mx-auto flex max-w-3xl flex-col px-5 py-20 sm:px-6"
       >
         <h2 className="text-3xl font-semibold">
           Projects I Built
@@ -141,11 +141,11 @@ export default function Home() {
           Some projects and applications I have built.
         </p>
 
-        <div className="pt-10 space-y-8">
+        <div className="space-y-8 pt-10">
           {projects.map((project) => (
             <div key={project.name}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <span className="text-lg font-semibold">
                     {project.name}
                   </span>

@@ -3,7 +3,6 @@ export const techStack = {
     "JavaScript",
     "TypeScript",
     "Python",
-    "C++",
   ],
 
   development: [
@@ -20,13 +19,10 @@ export const techStack = {
     "Hyprland",
     "Bash",
     "Git",
-    "Docker",
   ],
 
   learning: [
     "Rust",
-    "Low-level programming",
-    "Systems programming",
   ],
 };
 
@@ -53,7 +49,7 @@ export const projects = [
     name: "Portfolio",
     description:
       "Personal portfolio website.",
-    stack: "Next.js",
+    stack: "Next.js / TypeScript / Tailwind CSS",
     live: "https://sahil.is-a.dev/",
     github: "https://github.com/SahilShidruk/Portfolio-Website",
   },

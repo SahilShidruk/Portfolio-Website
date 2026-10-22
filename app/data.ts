@@ -3,6 +3,7 @@ export const techStack = {
     "JavaScript",
     "TypeScript",
     "Python",
+    "Java"
   ],
 
   development: [
